@@ -1,5 +1,5 @@
-document.onload = function(){
-	document.getElementById('getQuote').click(function() {
+
+	document.getElementById('getQuote').onclick = function() {
 		var newQuote = new XMLHttpRequest();
 		var url = "https://andruxnet-random-famous-quotes.p.mashape.com/";
 		newQuote.open('POST', url, false);
@@ -7,7 +7,8 @@ document.onload = function(){
 		newQuote.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		newQuote.setRequestHeader("Accept", "application/json");
 		newQuote.send();
-		console.log(newQuote.status);
-		console.log(newQuote.response);
-	})
-};
+		
+		var data = JSON.parse(newQuote.response);
+		
+	};
+
