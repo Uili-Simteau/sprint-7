@@ -18,6 +18,11 @@
 		console.log(quoteContent)
 		quoteDiv.appendChild(quoteContent);
 		
+		var quoteAuthor = document.createElement('p');
+		quoteAuthor.innerHTML = data.author;
+		console.log(quoteAuthor);
+		quoteDiv.appendChild(quoteAuthor);
+
 	};
 
 
