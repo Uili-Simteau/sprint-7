@@ -10,5 +10,14 @@
 		
 		var data = JSON.parse(newQuote.response);
 		
+		//adding stuff to DOM
+		var quoteDiv = document.querySelector('#quote');
+		quoteDiv.innerHTML = "";
+		var quoteContent = document.createElement('p');
+		quoteContent.innerHTML = data.quote;
+		console.log(quoteContent)
+		quoteDiv.appendChild(quoteContent);
+		
 	};
+
 
