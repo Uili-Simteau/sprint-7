@@ -20,7 +20,7 @@ document.getElementById('getQuote').onclick = function() {
 			quoteContent.innerHTML = data.quote;
 			console.log(quoteContent)
 			quoteDiv.appendChild(quoteContent);
-			
+
 			var quoteAuthor = document.createElement('p');
 			quoteAuthor.innerHTML = data.author;
 			console.log(quoteAuthor);
@@ -30,11 +30,11 @@ document.getElementById('getQuote').onclick = function() {
 			tweet.innerHTML = 'Tweet This Quote';
 			var quoteLink = data.quote.replace(/\s/g, "%20");
 			var authorLink = data.author.replace(/\s/g, "%20");
-			
+
 			tweet.classList.add('twitter-share-button');
 			tweet.href = `https://twitter.com/intent/tweet?text=${quoteLink}%20by%20${authorLink}`;
 			tweet.setAttribute('data-size', 'large');
-			
+
 			quoteDiv.appendChild(tweet);
 			window.twttr = (function(d, s, id) {
 				var js, fjs = d.getElementsByTagName(s)[0],
@@ -52,7 +52,7 @@ document.getElementById('getQuote').onclick = function() {
 
 				return t;
 			}(document, "script", "twitter-wjs"));
-			
+
 		}
 
 	}
@@ -60,31 +60,6 @@ document.getElementById('getQuote').onclick = function() {
 
 	)
 
-
-
-		/*
-		var newQuote = new XMLHttpRequest();
-		newQuote.open('POST', url, false);
-		newQuote.setRequestHeader("X-Mashape-Key", "YYZBL44AScmshjOI6TkpIvwUK4fpp1uQLUcjsnM16uN9HQH3ti");
-		newQuote.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		newQuote.setRequestHeader("Accept", "application/json");
-		newQuote.send();
-		
-		var data = JSON.parse(newQuote.response);
-		
-		//adding stuff to DOM
-		var quoteDiv = document.querySelector('#quote');
-		quoteDiv.innerHTML = "";
-		var quoteContent = document.createElement('p');
-		quoteContent.innerHTML = data.quote;
-		console.log(quoteContent)
-		quoteDiv.appendChild(quoteContent);
-		
-		var quoteAuthor = document.createElement('p');
-		quoteAuthor.innerHTML = data.author;
-		console.log(quoteAuthor);
-		quoteDiv.appendChild(quoteAuthor);
-		*/
 
 	};
 
